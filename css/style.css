@@ -713,3 +713,29 @@ button, input, textarea, select { font-family: inherit; font-size: 1rem; }
   font-size: 25px;
 }/* Added ordering, account and order dashboard styles; palette and original layout retained. */
 .cart-nav{background:var(--turmeric);color:var(--leaf-dark);border:0;border-radius:999px;padding:8px 14px;font-weight:700;cursor:pointer}.cart-nav span{background:var(--leaf);color:#fff;border-radius:50%;padding:2px 7px;margin-left:3px}.main-dish-card{border:2px solid var(--turmeric);box-shadow:0 12px 28px rgba(43,35,24,.16);position:relative}.main-dish-card:before{content:'MAIN DISH';position:absolute;z-index:2;top:12px;left:12px;background:var(--leaf);color:#fff;padding:5px 10px;border-radius:999px;font-size:.68rem;font-weight:700;letter-spacing:.08em}.free-side{padding-bottom:16px}.free-label{display:block;color:var(--leaf);font-size:.78rem;margin:8px 0}.side-add{padding:7px 12px!important;font-size:.76rem!important}.customer-account{background:var(--rice-deep)}.customer-card{max-width:540px}.cart-drawer{position:fixed;z-index:1002;top:0;right:0;width:min(440px,100vw);height:100dvh;overflow:auto;background:var(--card);box-shadow:-10px 0 36px #0003;padding:24px;transform:translateX(105%);transition:transform .25s}.cart-drawer.open{transform:translateX(0)}.cart-scrim{position:fixed;z-index:1001;inset:0;background:#17150fa8;opacity:0;pointer-events:none;transition:opacity .2s}.cart-scrim.show{opacity:1;pointer-events:auto}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px}.drawer-head h2{margin:0}.drawer-head button{background:none;border:0;font-size:2rem;color:var(--ink)}.cart-line{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.cart-line strong,.cart-line small{display:block}.cart-line small{font-size:.8rem;color:var(--muted)}.qty-control{display:flex;align-items:center;gap:10px}.qty-control button{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;background:#fff}.cart-summary{padding-top:15px}.cart-total,.cart-packing{display:flex;justify-content:space-between;padding:8px 0}.cart-summary fieldset{border:0;border-top:1px solid var(--line);padding:12px 0}.cart-summary legend{font-weight:700}.cart-summary fieldset label{display:block;margin:6px 0}.cart-summary input{accent-color:var(--leaf)}.cart-summary .sub{font-size:.82rem;margin-top:12px}.cart-nav:hover,.side-add:hover{filter:brightness(1.08)}.rating-label{font-size:.78rem;color:#e8dfc5;margin:0}.rating-breakdown{margin:12px 0;text-align:left}.rating-row{display:flex;align-items:center;gap:8px;font-size:.75rem;color:#f8f0d9;margin:4px 0}.rating-row>span:first-child{width:32px}.rating-row small{width:18px;text-align:right}.rating-track{height:7px;border-radius:99px;background:#ffffff40;flex:1;overflow:hidden}.rating-track i{display:block;height:100%;background:var(--turmeric-soft);border-radius:99px}.incoming-orders{border-top:1px solid var(--line);margin-top:25px;padding-top:20px}.incoming-orders h3{color:var(--leaf-dark);margin:0 0 6px}.incoming-orders>p{font-size:.86rem;color:var(--muted)}.order-option{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:12px;margin:9px 0;background:#fff;cursor:pointer}.order-option span,.order-option small{display:block}.order-option strong{color:var(--ink)}.order-option small{font-size:.78rem;color:var(--muted);margin-top:3px}.selected-bill{border:1px solid var(--line);background:var(--rice);padding:16px;border-radius:12px;margin-top:15px}.selected-bill h4{margin:0}.selected-bill p,.selected-bill li{font-size:.88rem}.selected-bill ul{padding-left:20px}.selected-bill .save-msg{display:block}.empty-orders{padding:12px;border-radius:9px;background:var(--rice);color:var(--muted)}@media(max-width:720px){.cart-nav{padding:7px 11px}.cart-drawer{padding:18px}.free-label{font-size:.68rem}}.grand-cart-total{font-size:1.1rem;border-top:1px solid var(--line);margin-top:6px;padding-top:11px}
+
+/* Shopin cart desktop interaction fix */
+.cart-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+}
+
+.cart-drawer {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: auto;
+  isolation: isolate;
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.cart-drawer input,
+.cart-drawer label,
+.cart-drawer button {
+  pointer-events: auto;
+  position: relative;
+}
