@@ -739,3 +739,10 @@ button, input, textarea, select { font-family: inherit; font-size: 1rem; }
   pointer-events: auto;
   position: relative;
 }
+.takeaway-extra {
+    font-size: 13px;
+    color: #e65c00;
+    font-weight: 600;
+    margin-left: 5px;
+    white-space: nowrap;
+}
