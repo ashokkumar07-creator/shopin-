@@ -1,0 +1,13 @@
+{
+  "name": "priya-kambu-kool",
+  "version": "1.0.0",
+  "description": "Priya Kambu Kool — traditional pearl millet kool shop website with online ordering",
+  "engines": {
+    "node": "26.x"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {}
+}
