@@ -746,3 +746,26 @@ button, input, textarea, select { font-family: inherit; font-size: 1rem; }
     margin-left: 5px;
     white-space: nowrap;
 }
+/* Desktop Cart Fix */
+@media (min-width: 992px) {
+
+  .cart-panel,
+  .cart-sidebar,
+  .cart-drawer {
+    position: fixed;
+    z-index: 99999 !important;
+    pointer-events: auto !important;
+  }
+
+  .cart-panel button,
+  .cart-sidebar button,
+  .cart-drawer button,
+  .cart-panel input,
+  .cart-sidebar input,
+  .cart-drawer input {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
