@@ -1227,3 +1227,27 @@ button, input, textarea, select { font-family: inherit; font-size: 1rem; }
     order: 5 !important;
   }
 }
+/* Increase font size by 1% */
+/* MOBILE LOGO TEXT SIZE FIX */
+
+@media screen and (max-width: 720px) {
+
+  .site-header .brand .brand-text .en {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+  }
+
+  .site-header .brand .brand-text .ta {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+  }
+
+  .site-header .brand {
+    min-width: 0 !important;
+  }
+
+  .site-header .brand-text {
+    min-width: 0 !important;
+  }
+}
