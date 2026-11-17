@@ -38,6 +38,40 @@
 <li><a href="#admin" class="nav-link admin-link">Admin Login</a></li>
     </ul>
     <div class="language-control"><button id="languageToggle" class="language-toggle" type="button" aria-label="Switch to Tamil">தமிழ்</button></div>
+  <div class="profile-wrapper" id="profileWrapper">
+
+  <button type="button" id="profileBtn"
+          class="profile-btn"
+          aria-label="Customer profile"
+          aria-expanded="false">
+    <svg viewBox="0 0 24 24" width="25" height="25"
+         fill="none" stroke="currentColor"
+         stroke-width="2">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M4 21a8 8 0 0 1 16 0"/>
+    </svg>
+  </button>
+
+  <div class="profile-menu hidden" id="profileMenu">
+    <h3 id="profileName">Welcome, Guest</h3>
+    <p id="profilePhone">Please sign in</p>
+
+    <button type="button" id="profileSignIn">
+      Sign In
+    </button>
+
+    <button type="button" id="profileOrders"
+            class="hidden">
+      My Order History
+    </button>
+
+    <button type="button" id="profileSignOut"
+            class="hidden">
+      Sign Out
+    </button>
+  </div>
+
+</div>
   </div>
 </header>
 
@@ -230,7 +264,15 @@
 </section>
 
 <!-- CUSTOMER ACCOUNT -->
-<section class="section customer-account" id="customer"><div class="container"><div class="admin-card customer-card"><div id="customerSignedOut"><h2>Customer Login</h2><p class="sub">Sign in with your name and mobile number. This browser remembers you until you sign out.</p><form id="customerLoginForm"><div class="field"><label for="customerName">Name</label><input id="customerName" required></div><div class="field"><label for="customerPhone">Mobile Number</label><input id="customerPhone" type="tel" inputmode="numeric" required></div><button class="btn btn-primary" type="submit">Sign In</button></form></div><div id="customerSignedIn" class="hidden"><h2 id="customerWelcome">Welcome</h2><p class="sub" id="customerPhoneDisplay"></p><div class="customer-order-history"><h3>Your Orders</h3><div id="customerOrders"></div></div><button class="btn btn-outline" id="customerSignOut">Sign Out</button></div></div></div></section>
+<section class="section customer-account" id="customer"><div class="container"><div class="admin-card customer-card"><div id="customerSignedOut"><h2>Customer Login</h2><p class="sub">Sign in with your name and mobile number. This browser remembers you until you sign out.</p><form id="customerLoginForm"><div class="field"><label for="customerName">Name</label><input id="customerName" required></div><div class="field"><label for="customerPhone">Mobile Number</label><input id="customerPhone" type="tel" inputmode="numeric" required></div><button class="btn btn-primary" type="submit">Sign In</button></form></div><div id="customerSignedIn" class="hidden"><h2 id="customerWelcome">Welcome</h2><p class="sub" id="customerPhoneDisplay"></p><div class="customer-order-history"><h3><h3>Recent Orders</h3>
+<p class="recent-orders-note">
+  Showing your latest 2 orders
+</p>
+<div id="customerOrders"></div>
+
+<a href="order-history.html" class="view-all-orders">
+  View All Orders →
+</a><div id="customerOrders"></div></div><button class="btn btn-outline" id="customerSignOut">Sign Out</button></div></div></div></section>
 <!-- ============================== ADMIN LOGIN ============================== -->
 
 <!-- ============================== FOOTER ============================== -->
@@ -315,5 +357,6 @@
     <span class="takeaway-extra">(+₹5 per item)</span>
 </label></fieldset><fieldset><legend>Payment option</legend><label><input type="radio" name="payment" value="Cash" checked> Cash</label><label><input type="radio" name="payment" value="UPI"> UPI</label><label><input type="radio" name="payment" value="Card at shop"> Card at shop</label></fieldset><p class="cart-total grand-cart-total"><span>Grand total</span><strong id="grandTotal">₹0</strong></p><button class="btn btn-primary" id="placeOrder" style="width:100%;justify-content:center">Send Order Request</button><p class="sub" id="cartMessage">Your request will appear in the shop admin dashboard.</p></div></aside><div class="cart-scrim" id="cartScrim"></div>
 <script src="js/i18n.js"></script><script src="js/app.js"></script><script src="js/admin-tools.js"></script><script src="js/order-status.js"></script><script src="js/review-ui.js"></script>
+<script src="js/profile.js"></script>
 </body>
 </html>
