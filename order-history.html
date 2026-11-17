@@ -265,6 +265,23 @@
           </strong>
         </div>
       `).join("");
+// Calculate takeaway packing charge
+const paidItemCount = items
+  .filter(item => Number(item.price) > 0)
+  .reduce((sum, item) => sum + Number(item.qty || 0), 0);
+
+const packingCharge = order.fulfillment === "takeaway"
+  ? Number(order.packing ?? paidItemCount * 5)
+  : 0;
+
+const packingHTML = packingCharge > 0
+  ? `
+    <div class="item packing-charge">
+      <span>Takeaway Packing (₹5 × ${paidItemCount})</span>
+      <strong>₹${packingCharge}</strong>
+    </div>
+  `
+  : "";
 
       return `
         <article class="order-card">
@@ -280,6 +297,7 @@
           <p class="date">${escapeHTML(dateText)}</p>
 
           ${itemHTML}
+          ${packingHTML}
 
           <div class="details">
             <p>

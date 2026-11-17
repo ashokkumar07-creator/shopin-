@@ -1251,3 +1251,15 @@ button, input, textarea, select { font-family: inherit; font-size: 1rem; }
     min-width: 0 !important;
   }
 }
+.packing-charge {
+  background: #fff4e8;
+  color: #d95a00;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.packing-charge strong {
+  color: #e65c00;
+}
